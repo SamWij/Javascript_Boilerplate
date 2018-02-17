@@ -4,12 +4,12 @@ export default {
 	debug: true,
 	devtool: 'inline-source-map',
 	noInfo: false,
-	entry [
+	entry: [
 		path.resolve(__dirname, 'src/index')
 	],
 	target: 'web',
 	output: {
-		path: path,resolve(__dirname, 'src'),
+		path: path.resolve(__dirname, 'src'),
 		publicPath: '/',
 		filename: 'bundle.js'
 	},
