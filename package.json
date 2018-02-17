@@ -2,14 +2,20 @@
   "name": "javascript-development-environment",
   "version": "0.0.0",
   "description": "Javascript Starter Pack",
-  "scripts": {},
+  "scripts": {
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "node buildScripts/server.js",
+    "security-check": "nsp check"
+  },
   "author": "Samantha Wijesinha",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "babel-cli": "6.16.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.17.0",
     "babel-loader": "6.2.5",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "6.16.0",
     "babel-register": "6.16.3",
     "chai": "3.5.0",
