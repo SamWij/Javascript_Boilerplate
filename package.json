@@ -9,12 +9,14 @@
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
-		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
-		"test:watch": "npm run test -- --watch"
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "Samantha Wijesinha",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "whatwg-fetch": "^2.0.3"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "6.17.0",
@@ -46,6 +48,7 @@
     "open": "0.0.5",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
+		"whatwg-fetch": "^2.0.3",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",
