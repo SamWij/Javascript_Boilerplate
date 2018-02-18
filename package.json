@@ -11,20 +11,29 @@
     "security-check": "nsp check",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
-		"generate-mock-data": "babel-node buildScripts/generateMockData",
-		"prestart-mockapi": "npm run generate-mock-data",
-		"start-mockapi": "json-server --watch src/api/db.json --port 3001",
-		"clean-dist": "rimraf ./dist && mkdir dist",
-		"prebuild": "npm-run-all clean-dist test lint",
-		"build": "babel-node buildScripts/build.js",
-		"postbuild": "babel-node buildScripts/distServer.js"
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node buildScripts/build.js",
+    "postbuild": "babel-node buildScripts/distServer.js"
   },
+ "engines": {
+   "node": "8.6.0"
+ },
+ "repostiory": {
+   "type": "git",
+   "url": "https://github.com/SamWij/Javascript_Boilerplate.git"
+ },
   "author": "Samantha Wijesinha",
   "license": "MIT",
   "dependencies": {
-    "whatwg-fetch": "^2.0.3"
+    "cors": "^2.8.4",
+    "express": "4.14.0"
   },
   "devDependencies": {
+    "whatwg-fetch": "^2.0.3",
     "babel-cli": "^6.26.0",
     "babel-core": "6.17.0",
     "babel-loader": "6.2.5",
@@ -55,7 +64,6 @@
     "open": "0.0.5",
     "rimraf": "2.5.4",
     "style-loader": "0.13.1",
-		"whatwg-fetch": "^2.0.3",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",

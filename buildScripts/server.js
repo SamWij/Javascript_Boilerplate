@@ -3,12 +3,14 @@ import express from 'express';
 import path from 'path';
 import open from 'open';
 import webpack from 'webpack';
-import config from '../webpack.config.dev'
+import config from '../webpack.config.dev';
+import cors from 'cors';
 
 /* eslint-disable no-console */
-const port = 3000;
+app.set{'port', (process.env.PORT || 5000)}
 let app = express();
 const compiler = webpack(config);
+app.use(cors());
 
 app.use(require('webpack-dev-middleware')(compiler, {
 	noInfo: true,
@@ -18,6 +20,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../src/index.html'))
 });
+
 
 app.get('/users', (req, res) => {
 	//Hard coding for simplicity. Pretend this hits a real database
@@ -29,10 +32,7 @@ app.get('/users', (req, res) => {
 	]);
 });
 
-app.listen(port, (err) => {
-	if (err) {
-		console.log(err)
-	} else {
-		open('http://localhost:' + port)
-	}
-});
+
+app.listen(app.get('port' => {
+	console.log("Node app is running at localhoset: " + app.get('port'))
+})

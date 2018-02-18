@@ -1,0 +1,6 @@
+{
+	"name": "Javascript Starter Pack",
+	"description": "A simple API built in node and express",
+	"repository": "https://github.com/SamWij/Javascript_Boilerplate.git",
+	"keywords": ["node", "express", "static"]
+}
