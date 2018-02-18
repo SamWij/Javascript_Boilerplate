@@ -4,11 +4,13 @@
   "description": "Javascript Starter Pack",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node buildScripts/server.js",
-		"lint": "esw webpack.config.* src buildScripts --color",
-		"lint:watch": "npm run lint -- --watch",
-    "security-check": "nsp check"
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "security-check": "nsp check",
+		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+		"test:watch": "npm run test -- --watch"
   },
   "author": "Samantha Wijesinha",
   "license": "MIT",
@@ -36,7 +38,7 @@
     "json-schema-faker": "0.3.6",
     "json-server": "0.8.22",
     "localtunnel": "1.8.1",
-    "mocha": "3.1.2",
+    "mocha": "^5.0.1",
     "nock": "8.1.0",
     "npm-run-all": "3.1.1",
     "nsp": "2.6.2",
